@@ -14,12 +14,12 @@
                         2, -- Time (seconds)
                     },
                     Cycles = {
-                        Min = 10,
-                        Max = 20,
+                        Min = 1,
+                        Max = 1,
                         WaitTime = 0,
                     },
                     CamShake = {
-                        true, -- Enabled/Disabled
+                        false, -- Enabled/Disabled
                         {3.5, 20, 0.1, 1}, -- Shake values (don't change if you don't know)
                         100, -- Shake start distance (from Entity to you)
                     },
