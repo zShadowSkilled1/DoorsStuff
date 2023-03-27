@@ -93,9 +93,6 @@ if game.PlaceId == 6839171747 or 10549003388 then
             end)
         end
 
-
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/zShadowSkilled1/DoorsStuff/main/FunnyMode/Baller.lua", true))()
-
         game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Changed:Connect(function()
             game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Visible = true
             wait(5)
@@ -114,4 +111,8 @@ if game.PlaceId == 6839171747 or 10549003388 then
             game:GetService("Players").LocalPlayer.Backpack.Lockpick.Handle["sound_close"].SoundId = "rbxassetid://6445594239"
             end
         end
+    end
+
+    while wait(100) do
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zShadowSkilled1/DoorsStuff/main/FunnyMode/Baller.lua", true))()
     end
