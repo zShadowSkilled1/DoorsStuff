@@ -44,7 +44,7 @@ if game.PlaceId == 6839171747 or 10549003388 then
         game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.HideMonster.Heartbeat.SoundId = "rbxassetid://8435092314"
         game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener["Jumpscare_Rush"].SoundId = "rbxassetid://8481038804"
         game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].Health.Music.Blue.SoundId = "rbxassetid://1843404009"
-       game.Players.LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].Health.Music.Blue.SoundId = "rbxassetid://1843404009"
+        game.Players.LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].Health.Music.Blue.SoundId = "rbxassetid://1843404009"
         game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].Health.Hit.SoundId = "rbxassetid://2505396618"
         game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].Health.Death.SoundId = "rbxassetid://2661731024"
         game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Cutscenes.Elevator1.EndMusic.SoundId = "rbxassetid://9039442744"
@@ -54,19 +54,6 @@ if game.PlaceId == 6839171747 or 10549003388 then
         game:GetService("ReplicatedStorage").ClientModules.EntityModules.Shade.SoundHurt.SoundId = "rbxassetid://9066063340"
         print("Doors Funny Mode Enabled | zShadowSkilled")
         --game:GetService("ReplicatedStorage").JumpscareModels.RushNew.Attachment.ParticleEmitter.Texture = "rbxassetid://11151804223"
-        while true do
-        wait(1)
-        if game.Players.LocalPlayer.Backpack:FindFirstChild('Lighter') then
-            game:GetService("Players").LocalPlayer.Backpack.Lighter.Handle["sound_open"].SoundId = "rbxassetid://6465449047"
-            game:GetService("Players").LocalPlayer.Backpack.Lighter.Handle["sound_close"].SoundId = "rbxassetid://5274463739"
-        end
-        if game.Players.LocalPlayer.Backpack:FindFirstChild('Lockpick') then
-            if game.Players.LocalPlayer.Backpack.Lockpick:FindFirstChild('Handle') then
-            game:GetService("Players").LocalPlayer.Backpack.Lockpick.Handle["sound_open"].SoundId = "rbxassetid://8481038804"
-            game:GetService("Players").LocalPlayer.Backpack.Lockpick.Handle["sound_close"].SoundId = "rbxassetid://6445594239"
-            end
-        end
-            end
             game.ReplicatedStorage.GameData.LatestRoom.Changed:Connect(function()
                 local roomdoor = game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value].Door.Door
                 local room = game.Workspace.CurrentRooms[game.ReplicatedStorage.GameData.LatestRoom.Value]
@@ -112,3 +99,16 @@ if game.PlaceId == 6839171747 or 10549003388 then
             game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = ""
             game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Visible = true
         end)
+
+        while wait(1) do
+        if game.Players.LocalPlayer.Backpack:FindFirstChild('Lighter') then
+            game:GetService("Players").LocalPlayer.Backpack.Lighter.Handle["sound_open"].SoundId = "rbxassetid://6465449047"
+            game:GetService("Players").LocalPlayer.Backpack.Lighter.Handle["sound_close"].SoundId = "rbxassetid://5274463739"
+        end
+        if game.Players.LocalPlayer.Backpack:FindFirstChild('Lockpick') then
+            if game.Players.LocalPlayer.Backpack.Lockpick:FindFirstChild('Handle') then
+            game:GetService("Players").LocalPlayer.Backpack.Lockpick.Handle["sound_open"].SoundId = "rbxassetid://8481038804"
+            game:GetService("Players").LocalPlayer.Backpack.Lockpick.Handle["sound_close"].SoundId = "rbxassetid://6445594239"
+            end
+        end
+    end
