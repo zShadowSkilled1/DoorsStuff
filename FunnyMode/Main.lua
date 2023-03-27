@@ -72,7 +72,7 @@ if game.PlaceId == 6839171747 or 10549003388 then
                 roomdoor.Material = "Slate"
                 roomdoor.Sign.Material = "Slate"    
             end)
-            game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = "Doors Funny Mode | @zShadowSkilled"
+            game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = "Doors Funny Mode (Thanks RobloxPunch & subscribe to him, he deserve it :D) | @zShadowSkilled"
 
             game.Workspace.ChildAdded:Connect(function(Obj)
                 if Obj.Name == "Rush" or Obj.Name == "RushMoving" then
