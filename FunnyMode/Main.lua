@@ -5,6 +5,7 @@ if game.PlaceId == 6839171747 or 10549003388 then
         Font = Enum.Font.SourceSansBold,
         TextSize = 18,
     })
+    game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Visible = true
     game:GetService("Players").LocalPlayer.PlayerGui.MainUI.Initiator["Main_Game"].RemoteListener.Modules.Screech.Attack.SoundId = "rbxassetid://9059590824"
     game:GetService("StarterGui").MainUI.Initiator["Main_Game"].RemoteListener.Modules.Screech.Attack.SoundId = "rbxassetid://9059590824"
     game:GetService("StarterGui").MainUI.Initiator["Main_Game"].RemoteListener.Modules.Screech.Caught.SoundId = "rbxassetid://2505396618"
@@ -85,7 +86,29 @@ if game.PlaceId == 6839171747 or 10549003388 then
                 roomdoor.Sign.Material = "Slate"    
                 loadstring(game:HttpGet("https://raw.githubusercontent.com/zShadowSkilled1/DoorsStuff/main/FunnyMode/Baller.lua", true))()
             end)
-            firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent, "Doors Funny Mode (Fixed) | @zShadowSkilled")
+            game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = "Doors Funny Mode | @zShadowSkilled"
+
+            game.Workspace.ChildAdded:Connect(function(Obj)
+                if Obj.Name == "Rush" or Obj.Name == "RushMoving" then
+                    Obj.RushNew.Scream.SoundId = "rbxassetid//6425216149"
+                end
+            end)
+
+            game.Workspace.ChildAdded:Connect(function(Obj)
+                if Obj.Name == "Seek" or Obj.Name == "SeekMoving" then
+                    Obj.SeekRig.Head.Black.Color = Color3.fromRGB(191,191,191)
+                    Obj.SeekRig.Head.Eye.Deceal.Texture = "rbxassetid://502389958"
+                    Obk.SeekRig.Head.Color = Color3.fromRGB(67,89,10)
+                    Obj.SeekRig.SeekPuddle.Color = Color3.fromRGB(106, 57, 9)
+                    Obj.Figure.Footsteps.SoundId = "rbxassetid://8435092314"
+                    Obj.Figure.PointLight.Enabled = false
+                end
+            end)
         end
 
 
+        game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Changed:Connect(function()
+            wait(5)
+            game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = ""
+            game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Visible = true
+        end)
