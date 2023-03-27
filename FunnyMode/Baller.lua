@@ -2,7 +2,6 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
 game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = ""
-_G.CMonsters = true
 
 -- Create entity
 local Baller1 = Spawner.createEntity({
@@ -12,7 +11,7 @@ local Baller1 = Spawner.createEntity({
     MoveDelay = 2,
     HeightOffset = 0,
     CanKill = true,
-    KillRange = 50,
+    KillRange = 5,
     SpawnInFront = false,
     ShatterLights = true,
     FlickerLights = {
@@ -58,7 +57,7 @@ Baller1.Debug.OnEntityFinishedRebound = function()
 end
 
 Baller1.Debug.OnEntityEnteredRoom = function(room)
-    if room == game.ReplicatedStorage.GameData.LatestRoom.Value - 1 then
+    if room == game.ReplicatedStorage.GameData.LatestRoom.Value - 2 then
         game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = "he is very close 2 u so hide"
     end
     print("Entity:", Baller1, "has entered room:", room)
@@ -81,4 +80,5 @@ end
 while true do
 wait(100)
 Spawner.runEntity(Baller1)
+wait(1)
 end
