@@ -36,11 +36,9 @@ local Baller1 = Spawner.createEntity({
             Image2 = "rbxassetid://11151804223", -- Image2 url
             Shake = true,
             Sound1 = {
-                0, -- SoundId
                 { Volume = 0.5 }, -- Sound properties
             },
             Sound2 = {
-                0, -- SoundId
                 { Volume = 0.5 }, -- Sound properties
             },
             Flashing = {
