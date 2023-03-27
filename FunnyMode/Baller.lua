@@ -1,4 +1,4 @@
-local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
 local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
 game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Visible = true
 game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = ""
@@ -8,52 +8,33 @@ _G.CMonsters = true
 local Baller1 = Spawner.createEntity({
     CustomName = "Baller", -- Custom name of your entity
     Model = "https://github.com/zShadowSkilled1/Custom/blob/main/Baller.rbxm?raw=true", -- Can be GitHub file or rbxassetid
-    Speed = 70, -- Percentage, 100 = default Rush speed
-    DelayTime = 2, -- Time before starting cycles (seconds)
+    Speed = 70,
+    MoveDelay = 2,
     HeightOffset = 0,
     CanKill = true,
-    KillRange = 20,
-    BackwardsMovement = false,
-    BreakLights = false,
+    KillRange = 50,
+    SpawnInFront = false,
+    ShatterLights = true,
     FlickerLights = {
-        true, -- Enabled/Disabled
-        2, -- Time (seconds)
+        Enabled = true,
+        Duration = 1
     },
     Cycles = {
         Min = 1,
         Max = 1,
-        WaitTime = 2,
+        Delay = 2
     },
     CamShake = {
-        true, -- Enabled/Disabled
-        {3.5, 20, 0.1, 1}, -- Shake values (don't change if you don't know)
-        100, -- Shake start distance (from Entity to you)
+        Enabled = true,
+        Values = {1.5, 20, 0.1, 1},
+        Range = 100
     },
-    Jumpscare = {
-        true, -- Enabled/Disabled
-        {
-            Image1 = "rbxassetid://11151804223", -- Image1 url
-            Image2 = "rbxassetid://11151804223", -- Image2 url
-            Shake = true,
-            Sound1 = {
-                { Volume = 0.5 }, -- Sound properties
-            },
-            Sound2 = {
-                { Volume = 0.5 }, -- Sound properties
-            },
-            Flashing = {
-                true, -- Enabled/Disabled
-                Color3.fromRGB(255, 255, 255), -- Color
-            },
-            Tease = {
-                true, -- Enabled/Disabled
-                Min = 1,
-                Max = 1,
-            },
-        },
-    },
-    CustomDialog = {"bro what", "Baller got u lol", "bruh", "lol.", "a", "uhhhhh"}, -- Custom death message
+    ResistCrucifix = false,
+    BreakCrucifix = true,
+    DeathMessage = {"hehe", "yo bro", "baller got u lol", "xd", "aaaa uuhhhh."},
+    IsCuriousLight = true
 })
+
 
 
 -----[[  Debug -=- Advanced  ]]-----
@@ -89,6 +70,10 @@ end
 
 Baller1.Debug.OnDeath = function()
     warn("Player has died.")
+end
+
+Baller1.Debug.OnUseCrucifix = function()
+    game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = "bro what is that"
 end
 ------------------------------------
 
