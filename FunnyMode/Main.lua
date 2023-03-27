@@ -89,12 +89,14 @@ if game.PlaceId == 6839171747 or 10549003388 then
                     Obj.SeekRig.SeekPuddle.Color = Color3.fromRGB(106, 57, 9)
                     Obj.Figure.Footsteps.SoundId = "rbxassetid://8435092314"
                     Obj.Figure.PointLight.Enabled = false
+                    game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = "yo bro why is Seek running in poop"
                 end
             end)
         end
 
 
         game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Changed:Connect(function()
+            game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Visible = true
             wait(5)
             game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = ""
             game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Visible = true
