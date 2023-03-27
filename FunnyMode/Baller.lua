@@ -32,7 +32,7 @@ local Baller1 = Spawner.createEntity({
     ResistCrucifix = false,
     BreakCrucifix = true,
     DeathMessage = {"hehe", "yo bro", "baller got u lol", "xd", "aaaa uuhhhh."},
-    IsCuriousLight = true
+    IsCuriousLight = false
 })
 
 
