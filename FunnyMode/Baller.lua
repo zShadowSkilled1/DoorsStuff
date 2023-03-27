@@ -1,5 +1,7 @@
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Visible = true
+game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = ""
 _G.CMonsters = true
 
 -- Create entity
@@ -52,23 +54,23 @@ local Baller1 = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"bro what", "Baller got u lol", "bruh", "lol."}, -- Custom death message
+    CustomDialog = {"bro what", "Baller got u lol", "bruh", "lol.", "a", "uhhhhh"}, -- Custom death message
 })
 
 
 -----[[  Debug -=- Advanced  ]]-----
 Baller1.Debug.OnEntitySpawned = function()
-    firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent, "Baller has spawned, quickly hide lol")
+    game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = "Baller has spawned in lol"
     print("Entity has spawned:", Baller1)
 end
 
 Baller1.Debug.OnEntityDespawned = function()
-    firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent, "he despawned ur safe")
+    game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = "he despawned ur safe"
     print("Entity has despawned:", Baller1)
 end
 
 Baller1.Debug.OnEntityStartMoving = function()
-    firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent, "Baller started moving")
+    game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = "he started moving"
     print("Entity has started moving:", Baller1)
 end
 
@@ -78,7 +80,7 @@ end
 
 Baller1.Debug.OnEntityEnteredRoom = function(room)
     if room == game.ReplicatedStorage.GameData.LatestRoom.Value - 1 then
-        firesignal(game.ReplicatedStorage.Bricks.Caption.OnClientEvent, "he is very close 2 u, hide")
+        game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = "he is very close 2 u so hide"
     end
     print("Entity:", Baller1, "has entered room:", room)
 end
@@ -95,4 +97,5 @@ end
 -- Run the created entity
 while true do
 wait(100)
+Spawner.runEntity(Baller1)
 end
