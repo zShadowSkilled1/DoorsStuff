@@ -71,13 +71,12 @@ if game.PlaceId == 6839171747 or 10549003388 then
                
                 roomdoor.Material = "Slate"
                 roomdoor.Sign.Material = "Slate"    
-                loadstring(game:HttpGet("https://raw.githubusercontent.com/zShadowSkilled1/DoorsStuff/main/FunnyMode/Baller.lua", true))()
             end)
             game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Text = "Doors Funny Mode | @zShadowSkilled"
 
             game.Workspace.ChildAdded:Connect(function(Obj)
                 if Obj.Name == "Rush" or Obj.Name == "RushMoving" then
-                    Obj.RushNew.Scream.SoundId = "rbxassetid//6425216149"
+                    if Obj:FindFirstChild("RushNew") then Obj.RushNew.Scream.SoundId = "rbxassetid//6425216149" end
                 end
             end)
 
@@ -94,6 +93,8 @@ if game.PlaceId == 6839171747 or 10549003388 then
             end)
         end
 
+
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/zShadowSkilled1/DoorsStuff/main/FunnyMode/Baller.lua", true))()
 
         game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Changed:Connect(function()
             game:GetService("Players").LocalPlayer.PlayerGui.MainUI.MainFrame.Caption.Visible = true
